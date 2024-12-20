@@ -1,0 +1,93 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Assets\LogoLiveLis.ico</ApplicationIcon>
+    <BaseOutputPath></BaseOutputPath>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\btn-cerrar-sesion-blue.png" />
+    <None Remove="Assets\btn-cerrar-sesion.png" />
+    <None Remove="Assets\btn-configuracion-white.png" />
+    <None Remove="Assets\btn-configuracion.png" />
+    <None Remove="Assets\by_it_health_blanco.png" />
+    <None Remove="Assets\Conectar-cian.png" />
+    <None Remove="Assets\Conectar.png" />
+    <None Remove="Assets\Desconectar-gray.png" />
+    <None Remove="Assets\Desconectar.png" />
+    <None Remove="Assets\ErrorM.png" />
+    <None Remove="Assets\EsperandoM.png" />
+    <None Remove="Assets\IconConectarHover.png" />
+    <None Remove="Assets\iconConectarHoverDesconectar.png" />
+    <None Remove="Assets\IconDesconectar.png" />
+    <None Remove="Assets\IconDesconectarHover.png" />
+    <None Remove="Assets\Interpretando.png" />
+    <None Remove="Assets\InterpretandoM.png" />
+    <None Remove="Assets\Logo Live LIS.png" />
+    <None Remove="Assets\OkM.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\LogoLiveLis.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="RestSharp" Version="111.4.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\btn-cerrar-sesion-blue.png" />
+    <Resource Include="Assets\btn-cerrar-sesion.png" />
+    <Resource Include="Assets\btn-configuracion-white.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\btn-configuracion.png" />
+    <Resource Include="Assets\by_it_health_blanco.png" />
+    <Resource Include="Assets\Conectar.png" />
+    <Resource Include="Assets\ErrorM.png" />
+    <Resource Include="Assets\EsperandoM.png" />
+    <Resource Include="Assets\IconConectarHover.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\iconConectarHoverDesconectar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\IconDesconectar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\IconDesconectarHover.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Interpretando.png" />
+    <Resource Include="Assets\InterpretandoM.png" />
+    <Resource Include="Assets\Logo Live LIS.png" />
+    <Resource Include="Assets\OkM.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

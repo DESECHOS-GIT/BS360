@@ -1,0 +1,36 @@
+﻿global using BS360.Config;
+global using BS360.CustomControls;
+global using BS360.Models;
+global using BS360.Networking;
+global using BS360.Services;
+global using BS360.Utilities;
+global using BS360.ViewModels;
+global using BS360.Views;
+global using CommunityToolkit.Mvvm.ComponentModel;
+global using CommunityToolkit.Mvvm.Input;
+global using Newtonsoft.Json;
+global using Newtonsoft.Json.Linq;
+global using RestSharp;
+global using System.Collections.ObjectModel;
+global using System.Configuration;
+global using System.Globalization;
+global using System.IdentityModel.Tokens.Jwt;
+global using System.IO;
+global using System.Net;
+global using System.Net.NetworkInformation;
+global using System.Net.Sockets;
+global using System.Reflection;
+global using System.Runtime.InteropServices;
+global using System.Text;
+global using System.Text.RegularExpressions;
+global using System.Windows;
+global using System.Windows.Controls;
+global using System.Windows.Data;
+global using System.Windows.Input;
+global using System.Windows.Interop;
+global using System.Windows.Media;
+global using System.Windows.Threading;
+global using static BS360.Models.objSolicitudHostQuery;
+global using static BS360.Models.RespuestaProgramacion;
+
+

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="CustomControls\ConfigurationInput.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CustomControls\MyMessageBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CustomControls\TerminalStateBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Colors\GlobalColors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Fonts\GlobalFonts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Images\GlobalIcons.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Styles\ConfigurationSideButtonStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Styles\ConnectButtonStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Styles\ControlWindowButtonStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Styles\DisconnectButtonStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Styles\ExitButtonStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Styles\GlobalScrollBarStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Styles\ResultsSideButtonStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Styles\TitleButtonStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Styles\UIStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ConfigurationView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\TerminalResultsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

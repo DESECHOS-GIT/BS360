@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <BitmapImage x:Key="IconLiveLis" UriSource="../../Assets/Logo Live LIS.png" />
+    <BitmapImage x:Key="IconByItHealth" UriSource="../../Assets/by_it_health_blanco.png" />
+    <BitmapImage x:Key="IconConfiguration" UriSource="../../Assets/btn-configuracion.png" />
+    <BitmapImage x:Key="IconConfigurationHover" UriSource="../../Assets/btn-configuracion-white.png" />
+
+    <BitmapImage x:Key="IconError" UriSource="../../Assets/ErrorM.png" />
+    <BitmapImage x:Key="IconWarning" UriSource="../../Assets/EsperandoM.png" />
+    <BitmapImage x:Key="IconProcess" UriSource="../../Assets/InterpretandoM.png" />
+    <BitmapImage x:Key="IconSucess" UriSource="../../Assets/OkM.png" />
+
+    <BitmapImage x:Key="IconDisconnect" UriSource="../../Assets/IconDesconectar.png" />
+    <BitmapImage x:Key="IconDisconnectGray" UriSource="../../Assets/IconDesconectarHover.png" />
+    <BitmapImage x:Key="IconConnect" UriSource="../../Assets/IconConectarHover.png" />
+    <BitmapImage x:Key="IconConnectDisconnect" UriSource="../../Assets/IconConectarHoverDesconectar.png" />
+
+</ResourceDictionary>
