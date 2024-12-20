@@ -1,0 +1,524 @@
+﻿<Page
+    x:Class="BS360.Views.ConfigurationView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:customControl="clr-namespace:BS360.CustomControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:BS360.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="ConfigurationView"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ControlTemplate x:Key="btnToggGuardar" TargetType="{x:Type Button}">
+            <Border
+                x:Name="border"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="15">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="border" Property="Background" Value="{StaticResource Color7}" />
+                    <Setter TargetName="border" Property="BorderBrush" Value="White" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="Cursor" Value="Hand" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="border" Property="Background" Value="{StaticResource Color7}" />
+                    <Setter TargetName="border" Property="BorderBrush" Value="White" />
+                    <Setter Property="Foreground" Value="White" />
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter TargetName="border" Property="Background" Value="#D3D3D3" />
+                    <Setter TargetName="border" Property="BorderBrush" Value="gray" />
+                    <Setter Property="Foreground" Value="gray" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Page.Resources>
+
+    <Border
+        Grid.Column="0"
+        Margin="-2,0,1,1"
+        Background="White"
+        CornerRadius="25"
+        RenderTransformOrigin="0.5,0.5">
+
+        <Border.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform />
+                <SkewTransform AngleX="0.217" />
+                <RotateTransform Angle="0.127" />
+                <TranslateTransform X="1.085" Y="0.002" />
+            </TransformGroup>
+        </Border.RenderTransform>
+        <Grid RenderTransformOrigin="0.503,0.546">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <TabControl
+                x:Name="tabControl"
+                Grid.Row="0"
+                Margin="28,30,30,15"
+                Background="Transparent"
+                BorderThickness="0"
+                SelectedIndex="{Binding ActiveTab, Mode=TwoWay}">
+
+                <TabItem
+                    Width="154"
+                    Height="37"
+                    Margin="0,-4,-20,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    FontSize="13px"
+                    FontWeight="Medium"
+                    Header="Conexión"
+                    RenderTransformOrigin="0.696,6.017">
+                    <TabItem.Style>
+                        <Style TargetType="TabItem">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type TabItem}">
+                                        <Border
+                                            Name="Border"
+                                            BorderBrush="Black"
+                                            BorderThickness="0,0,0,1"
+                                            CornerRadius="0"
+                                            SnapsToDevicePixels="True">
+                                            <ContentPresenter
+                                                x:Name="ContentSite"
+                                                Margin="10,2"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                ContentSource="Header" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="{StaticResource Color2}" />
+                                                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource Color8}" />
+                                                <Setter TargetName="Border" Property="CornerRadius" Value="15,15,2,2" />
+                                                <Setter Property="Foreground" Value="White" />
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource Color8}" />
+                                                <Setter Property="Foreground" Value="{StaticResource Color8}" />
+                                                <Setter Property="Cursor" Value="Hand" />
+                                            </Trigger>
+                                            <Trigger Property="IsFocused" Value="True">
+                                                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource Color8}" />
+                                                <Setter Property="Foreground" Value="White" />
+                                            </Trigger>
+                                            <MultiTrigger>
+                                                <MultiTrigger.Conditions>
+                                                    <Condition Property="IsMouseOver" Value="True" />
+                                                    <Condition Property="IsSelected" Value="True" />
+                                                </MultiTrigger.Conditions>
+                                                <Setter TargetName="Border" Property="Background" Value="{StaticResource Color2}" />
+                                                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource Color8}" />
+                                                <Setter Property="Foreground" Value="white" />
+                                            </MultiTrigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </TabItem.Style>
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                        <Grid
+                            Margin="0,10,-2,0"
+                            VerticalAlignment="Top"
+                            Background="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <!--  Contenido del TabItem  -->
+                            <Grid
+                                Grid.Column="0"
+                                VerticalAlignment="Center "
+                                Background="Transparent">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <customControl:ConfigurationInput
+                                    Grid.Row="0"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding CodeDmJsonInput}"
+                                    LabelText="Code DM" />
+                                <customControl:ConfigurationInput
+                                    Grid.Row="1"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding UserJsonInput}"
+                                    LabelText="Usuario JSON" />
+                                <customControl:ConfigurationInput
+                                    Grid.Row="2"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding UserNameInput}"
+                                    LabelText="Usuario Login" />
+                                <customControl:ConfigurationInput
+                                    Grid.Row="3"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding PasswordInput}"
+                                    LabelText="Contrasena" />
+                                <customControl:ConfigurationInput
+                                    Grid.Row="4"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding ClientInput}"
+                                    LabelText="Cliente" />
+                            </Grid>
+
+                            <Grid Grid.Column="1" Background="Transparent">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <customControl:ConfigurationInput
+                                    Grid.Row="0"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding UrlBaseInput}"
+                                    LabelText="URL Base" />
+                                <customControl:ConfigurationInput
+                                    Grid.Row="1"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding UrlHostQueryInput}"
+                                    LabelText="URL HostQuery" />
+                                <customControl:ConfigurationInput
+                                    Grid.Row="2"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding UrlResultInput}"
+                                    LabelText="URL Resultados" />
+                                <customControl:ConfigurationInput
+                                    Grid.Row="3"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding UrlTokenInput}"
+                                    LabelText="URL Token" />
+                            </Grid>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+
+                <TabItem
+                    Width="146"
+                    Height="37"
+                    Margin="0,-4,-41,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    FontSize="13px"
+                    FontWeight="Medium"
+                    Header="Parametrización"
+                    RenderTransformOrigin="0.5,0.5">
+                    <TabItem.Style>
+                        <Style TargetType="TabItem">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type TabItem}">
+                                        <Border
+                                            Name="Border"
+                                            BorderBrush="Black"
+                                            BorderThickness="0,0,0,1"
+                                            CornerRadius="0"
+                                            SnapsToDevicePixels="True">
+                                            <ContentPresenter
+                                                x:Name="ContentSite"
+                                                Margin="10,2"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                ContentSource="Header" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="{StaticResource Color2}" />
+                                                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource Color8}" />
+                                                <Setter TargetName="Border" Property="CornerRadius" Value="15,15,2,2" />
+                                                <Setter Property="Foreground" Value="White" />
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource Color8}" />
+                                                <Setter Property="Foreground" Value="{StaticResource Color8}" />
+                                                <Setter Property="Cursor" Value="Hand" />
+                                            </Trigger>
+                                            <Trigger Property="IsFocused" Value="True">
+                                                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource Color8}" />
+                                                <Setter Property="Foreground" Value="White" />
+                                            </Trigger>
+                                            <MultiTrigger>
+                                                <MultiTrigger.Conditions>
+                                                    <Condition Property="IsMouseOver" Value="True" />
+                                                    <Condition Property="IsSelected" Value="True" />
+                                                </MultiTrigger.Conditions>
+                                                <Setter TargetName="Border" Property="Background" Value="{StaticResource Color2}" />
+                                                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource Color8}" />
+                                                <Setter Property="Foreground" Value="white" />
+                                            </MultiTrigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </TabItem.Style>
+                    <ScrollViewer Margin="-5,0,6,0" VerticalScrollBarVisibility="Auto">
+                        <Grid
+                            Margin="0,10,-2,0"
+                            VerticalAlignment="Top"
+                            Background="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <!--  Contenido del TabItem  -->
+                            <Grid VerticalAlignment="Top">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <customControl:ConfigurationInput
+                                    Grid.Row="0"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding InterfaceNameInput}"
+                                    LabelText="Nombre Interfaz" />
+                                <customControl:ConfigurationInput
+                                    Grid.Row="1"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding EquipmentNameInput}"
+                                    LabelText="Nombre Equipo" />
+                                <customControl:ConfigurationInput
+                                    Grid.Row="2"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding LogNameInput}"
+                                    LabelText="Nombre Log" />
+                                <customControl:ConfigurationInput
+                                    Grid.Row="3"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding ReconnAttemptsInput}"
+                                    LabelText="Intentos de Reconexión" />
+                                <customControl:ConfigurationInput
+                                    Grid.Row="4"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding PortInterfaceInput}"
+                                    LabelText="Puerto" />
+                                <customControl:ConfigurationInput
+                                    Grid.Row="5"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding CantidadMensajes}"
+                                    LabelText="Cantidad Maxima de Mensajes" />
+                            </Grid>
+
+                            <Grid Grid.Column="1" VerticalAlignment="top">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <customControl:ConfigurationInput
+                                    Grid.Row="0"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding RetransmitionTimeInput}"
+                                    LabelText="Tiempo Retransmision" />
+                                <customControl:ConfigurationInput
+                                    Grid.Row="1"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding LogPathInput}"
+                                    LabelText="Ruta Log" />
+                                <customControl:ConfigurationInput
+                                    Grid.Row="2"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding OkFilesPathInput}"
+                                    LabelText="Ruta Archivos Ok" />
+                                <customControl:ConfigurationInput
+                                    Grid.Row="3"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding ErrorFilesPathInput}"
+                                    LabelText="Ruta Archivos OK" />
+                                <customControl:ConfigurationInput
+                                    Grid.Row="4"
+                                    ErrorText="asd"
+                                    Foreground="#6B4B8B"
+                                    InputText="{Binding RetransmitionPathInput}"
+                                    LabelText="RutaArchivo Retrasmición" />
+
+                            </Grid>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem
+                    Width="148"
+                    Height="37"
+                    Margin="0,-4,-62,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    FontSize="13px"
+                    FontWeight="Medium"
+                    Header="QC"
+                    RenderTransformOrigin="0.5,0.5">
+                    <TabItem.Style>
+                        <Style TargetType="TabItem">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type TabItem}">
+                                        <Border
+                                            Name="Border"
+                                            BorderBrush="Black"
+                                            BorderThickness="0,0,0,1"
+                                            CornerRadius="0"
+                                            SnapsToDevicePixels="True">
+                                            <ContentPresenter
+                                                x:Name="ContentSite"
+                                                Margin="10,2"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                ContentSource="Header" />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="{StaticResource Color2}" />
+                                                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource Color8}" />
+                                                <Setter TargetName="Border" Property="CornerRadius" Value="15,15,2,2" />
+                                                <Setter Property="Foreground" Value="White" />
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource Color8}" />
+                                                <Setter Property="Foreground" Value="{StaticResource Color8}" />
+                                                <Setter Property="Cursor" Value="Hand" />
+                                            </Trigger>
+                                            <Trigger Property="IsFocused" Value="True">
+                                                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource Color8}" />
+                                                <Setter Property="Foreground" Value="White" />
+                                            </Trigger>
+                                            <MultiTrigger>
+                                                <MultiTrigger.Conditions>
+                                                    <Condition Property="IsMouseOver" Value="True" />
+                                                    <Condition Property="IsSelected" Value="True" />
+                                                </MultiTrigger.Conditions>
+                                                <Setter TargetName="Border" Property="Background" Value="{StaticResource Color2}" />
+                                                <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource Color8}" />
+                                                <Setter Property="Foreground" Value="white" />
+                                            </MultiTrigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </TabItem.Style>
+                    <ScrollViewer Margin="-5,0,6,0" VerticalScrollBarVisibility="Auto">
+                        <Grid
+                            Margin="0,10,-2,0"
+                            VerticalAlignment="Top"
+                            Background="Transparent">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <!--  Contenido del TabItem  -->
+                            <Grid VerticalAlignment="Top">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+
+
+                            </Grid>
+
+                            <Grid Grid.Column="1" VerticalAlignment="top">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                            </Grid>
+                        </Grid>
+                    </ScrollViewer>
+                </TabItem>
+
+            </TabControl>
+
+
+
+            <Grid
+                Grid.Row="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Background="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <!--  Imagen centrada  -->
+
+                <!--  Botón centrado en la fila inferior  -->
+                <Button
+                    x:Name="BtnSaveConfiguration"
+                    Grid.Row="2"
+                    Width="100"
+                    Height="28"
+                    MinWidth="100"
+                    MinHeight="40"
+                    Margin="0,15,0,15"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Background="{StaticResource Color2}"
+                    Command="{Binding SaveConfigurationConnectionCommand}"
+                    Content="Guardar"
+                    FontSize="13"
+                    FontWeight="Bold"
+                    Foreground="#FFF1F1F1"
+                    Template="{DynamicResource btnToggGuardar}" />
+            </Grid>
+
+        </Grid>
+    </Border>
+</Page>

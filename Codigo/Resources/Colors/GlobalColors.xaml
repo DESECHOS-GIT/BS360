@@ -1,0 +1,70 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--  Background Colors  -->
+    <Color x:Key="primaryColor">#6379D9</Color>
+    <Color x:Key="secondaryColor">#24C4D4</Color>
+    <Color x:Key="SecondaryColorHover">#14E0D5</Color>
+    <Color x:Key="TertiaryColor">#2EBDFF</Color>
+
+
+    <!--  Color Palette  -->
+    <SolidColorBrush x:Key="Color0" Color="#E0E1F1" />
+    <SolidColorBrush x:Key="Color1" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="Color2" Color="#2EBDFF" />
+    <SolidColorBrush x:Key="Color3" Color="#24C4D4" />
+    <SolidColorBrush x:Key="Color4" Color="#5E80DB" />
+    <SolidColorBrush x:Key="Color5" Color="#9c9c9c" />
+    <SolidColorBrush x:Key="Color6" Color="#68696C" />
+
+    <!--  Configuration View  -->
+    <SolidColorBrush x:Key="Color7" Color="#24C4D4" />
+    <SolidColorBrush x:Key="Color8" Color="#006EA1" />
+
+
+    <!--  Terminal States  -->
+    <SolidColorBrush x:Key="ColorInfo" Color="#6379D8" />
+    <SolidColorBrush x:Key="ColorError" Color="#D13E49" />
+    <SolidColorBrush x:Key="ColorSucess" Color="#19B7AF" />
+    <SolidColorBrush x:Key="ColorWarning" Color="#FFB703" />
+
+    <!--  Font Colors  -->
+    <SolidColorBrush x:Key="titleColor1" Color="#E0E1F1" />
+    <SolidColorBrush x:Key="titleColor2" Color="#D5CFF5" />
+    <SolidColorBrush x:Key="titleColor3" Color="#BCBEE0" />
+    <SolidColorBrush x:Key="titleColor4" Color="#68696C" />
+    <SolidColorBrush x:Key="titleColor5" Color="#3E3E3E" />
+
+    <SolidColorBrush x:Key="BrackgroundBtnConfiguracion" Color="{StaticResource secondaryColor}" />
+    <SolidColorBrush x:Key="BrackgroundBtnConfiguracionHover" Color="{StaticResource SecondaryColorHover}" />
+    <SolidColorBrush x:Key="BrackgroundBtnResultados" Color="{StaticResource primaryColor}" />
+
+    <Color x:Key="PrimaryColor">#2EBDFF</Color>
+    <Color x:Key="SecondaryColor">#19B7AF</Color>
+    <!--<Color x:Key="SecondaryColorHover">#14E0D5</Color>
+<Color x:Key="TertiaryColor">#6379D9</Color>-->
+    <Color x:Key="HighlightColor">#006EA1</Color>
+    <Color x:Key="DisabledColor">Gray</Color>
+    <Color x:Key="PressedColor">#6495ED</Color>
+    <Color x:Key="Error">Red</Color>
+    <Color x:Key="Warning">#FFC107</Color>
+    <Color x:Key="Info">#6495ED</Color>
+    <Color x:Key="Texto">#FF434A49</Color>
+    <Color x:Key="btnDsconectarColor">#C6C6C6</Color>
+
+
+    <!--  Pinceles basados en los colores globales  -->
+    <SolidColorBrush x:Key="PrimaryColorBackground" Color="{StaticResource PrimaryColor}" />
+    <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource SecondaryColor}" />
+    <!--<SolidColorBrush x:Key="BrackgroundBtnResultados" Color="{StaticResource TertiaryColor}"/>
+<SolidColorBrush x:Key="BrackgroundBtnConfiguracion" Color="{StaticResource SecondaryColor}"/>
+<SolidColorBrush x:Key="BrackgroundBtnConfiguracionHover" Color="{StaticResource SecondaryColorHover}"/>-->
+    <SolidColorBrush x:Key="Brackground" Color="{StaticResource HighlightColor}" />
+    <SolidColorBrush x:Key="DisabledBrush" Color="{StaticResource DisabledColor}" />
+    <SolidColorBrush x:Key="ErrorColor" Color="{StaticResource Error}" />
+    <SolidColorBrush x:Key="ColorTextoInput" Color="{StaticResource Texto}" />
+    <!--<SolidColorBrush x:Key="ColorWarning" Color="{StaticResource Warning}"/>-->
+    <SolidColorBrush x:Key="ColorProcess" Color="{StaticResource HighlightColor}" />
+    <SolidColorBrush x:Key="InfoColor" Color="{StaticResource Info}" />
+    <SolidColorBrush x:Key="btnDsconectar" Color="{StaticResource btnDsconectarColor}" />
+
+</ResourceDictionary>
